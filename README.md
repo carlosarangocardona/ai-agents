@@ -8,13 +8,13 @@ Pairs with my [skills repository](https://github.com/carlosarangocardona/skills/
 
 ## Agents
 
-| Agent                   | Mode     | Model             | Role                                                                                                               |
-| ----------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `@architect`            | primary  | claude-opus-4-6   | Orchestrator. Drives requirements, writes Task Briefs, manages the review loop. Never writes code.                 |
-| `@developer`            | subagent | claude-sonnet-4-6 | Implements one task at a time from a Task Brief. Validates via linters/tests before reporting done.                |
-| `@code-reviewer`        | subagent | gpt-5.3-codex     | Reviews every diff against the Task Brief. Issues only actionable change requests.                                 |
-| `@second-code-reviewer` | subagent | claude-opus-4-6   | Independent second reviewer. Engaged in parallel on medium/high complexity tasks, after `@code-reviewer` approves. |
-| `@repo-scout`           | subagent | claude-sonnet-4-6 | Scans an unfamiliar repo and writes/maintains `ARCHITECTURE.md`. Read-only except for that file.                   |
+| Agent                   | Mode     | Model                          | Role                                                                                                               |
+| ----------------------- | -------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `@architect`            | primary  | github-copilot/claude-opus-4.6   | Orchestrator. Drives requirements, writes Task Briefs, manages the review loop. Never writes code.                 |
+| `@developer`            | subagent | github-copilot/claude-sonnet-4.6 | Implements one task at a time from a Task Brief. Validates via linters/tests before reporting done.                |
+| `@code-reviewer`        | subagent | github-copilot/gpt-4.1           | Reviews every diff against the Task Brief. Issues only actionable change requests.                                 |
+| `@second-code-reviewer` | subagent | github-copilot/claude-opus-4.6   | Independent second reviewer. Engaged in parallel on medium/high complexity tasks, after `@code-reviewer` approves. |
+| `@repo-scout`           | subagent | github-copilot/claude-sonnet-4.6 | Scans an unfamiliar repo and writes/maintains `ARCHITECTURE.md`. Read-only except for that file.                   |
 
 ---
 
