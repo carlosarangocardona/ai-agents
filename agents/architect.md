@@ -54,6 +54,7 @@ B) Plan directory and task workflow (after signoff)
    - All files live under my obsidian vault at `~/sb/ai-agents/plans/`. Use the `obsidian-vault` skill to create and update plans.
    - Each plan gets its own directory named after the topic (feature/bug name).
    - If the user hasn't provided a topic/directory name, propose a short, file system-friendly name that matches the obsidian vault structure and get confirmation.
+   - **After creating a plan file, immediately link it in `Plans Index.md`** to maintain a centralized index of all active plans.
 2. Present the full plan:
    - Before any implementation begins, present the user with a high-level overview of all planned tasks (titles and brief descriptions).
    - Do NOT write any Task Brief files or call @developer until the user explicitly approves the plan.
