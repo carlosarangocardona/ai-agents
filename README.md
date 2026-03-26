@@ -1,8 +1,18 @@
 # AI Agents
 
-My personal multi-agent AI workflow for software development, orchestrated through [opencode](https://opencode.ai/). The pipeline covers the full development lifecycle: requirements discovery, implementation, and dual independent code review — driven by a team of specialized agents.
+My personal multi-agent AI workflow for software development. Includes agents for [opencode](https://opencode.ai/) and [GitHub Copilot CLI](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line). The pipeline covers the full development lifecycle: requirements discovery, implementation, and dual independent code review — driven by a team of specialized agents.
 
 Pairs with my [skills repository](https://github.com/carlosarangocardona/skills/).
+
+---
+
+## Repository Structure
+
+| Directory | Tool | Description |
+| --------- | ---- | ----------- |
+| [`opencode-agents/`](./opencode-agents/) | [opencode](https://opencode.ai/) | Agents configured for opencode with GitHub Copilot models |
+| [`opencode-free-agents/`](./opencode-free-agents/) | [opencode](https://opencode.ai/) | Agents configured for opencode with free/open-weight models |
+| [`copilot-agents/`](./copilot-agents/) | [GitHub Copilot CLI](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line) | Agents configured for the GitHub Copilot CLI |
 
 ---
 
@@ -90,10 +100,24 @@ Both reviewers must approve before `@developer` reports completion to `@architec
 
 ### Install the agents
 
-Clone this repo into the opencode agents directory:
+Clone this repo, then symlink or copy the relevant subdirectory into your tool's agents folder.
 
+**opencode (GitHub Copilot models):**
 ```bash
-git clone https://github.com/carlosarangocardona/ai-agents ~/.config/opencode/agents
+git clone https://github.com/carlosarangocardona/ai-agents
+ln -s $(pwd)/ai-agents/opencode-agents ~/.config/opencode/agents
+```
+
+**opencode (free/open-weight models):**
+```bash
+git clone https://github.com/carlosarangocardona/ai-agents
+ln -s $(pwd)/ai-agents/opencode-free-agents ~/.config/opencode/agents
+```
+
+**GitHub Copilot CLI:**
+```bash
+git clone https://github.com/carlosarangocardona/ai-agents
+# place files from copilot-agents/ in your Copilot CLI agents directory
 ```
 
 Install the companion skills (required by `@architect` for the `interviewer` and `obsidian-vault` skills):
