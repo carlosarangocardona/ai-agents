@@ -122,13 +122,15 @@ ln -s $(pwd)/ai-agents/opencode-free-agents ~/.config/opencode/agents
 ```bash
 git clone https://github.com/carlosarangocardona/ai-agents
 ln -s -s $(pwd)/ai-agents/copilot-agents ~/.config/copilot/agents
-# place files from copilot-agents/ in your Copilot CLI agents directory
 ```
 
 Install the companion skills (required by `@architect` for the `interviewer` and `obsidian-vault` skills):
 
 ```bash
-git clone https://github.com/carlosarangocardona/skills ~/.config/opencode/skills
+npx skills add https://github.com/carlosarangocardona/skills --skill interviewer
+
+npx skills add https://github.com/carlosarangocardona/skills --skill obsidian-vault
+
 ```
 
 ### Usage
