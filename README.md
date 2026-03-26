@@ -8,18 +8,18 @@ Pairs with my [skills repository](https://github.com/carlosarangocardona/skills/
 
 ## Repository Structure
 
-| Directory | Tool | Description |
-| --------- | ---- | ----------- |
-| [`opencode-agents/`](./opencode-agents/) | [opencode](https://opencode.ai/) | Agents configured for opencode with GitHub Copilot models |
-| [`opencode-free-agents/`](./opencode-free-agents/) | [opencode](https://opencode.ai/) | Agents configured for opencode with free/open-weight models |
-| [`copilot-agents/`](./copilot-agents/) | [GitHub Copilot CLI](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line) | Agents configured for the GitHub Copilot CLI |
+| Directory                                          | Tool                                                                                                                   | Description                                                 |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [`opencode-agents/`](./opencode-agents/)           | [opencode](https://opencode.ai/)                                                                                       | Agents configured for opencode with GitHub Copilot models   |
+| [`opencode-free-agents/`](./opencode-free-agents/) | [opencode](https://opencode.ai/)                                                                                       | Agents configured for opencode with free/open-weight models |
+| [`copilot-agents/`](./copilot-agents/)             | [GitHub Copilot CLI](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line) | Agents configured for the GitHub Copilot CLI                |
 
 ---
 
 ## Agents
 
-| Agent                   | Mode     | Model                          | Role                                                                                                               |
-| ----------------------- | -------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Agent                   | Mode     | Model                            | Role                                                                                                               |
+| ----------------------- | -------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `@architect`            | primary  | github-copilot/claude-opus-4.6   | Orchestrator. Drives requirements, writes Task Briefs, manages the review loop. Never writes code.                 |
 | `@developer`            | subagent | github-copilot/claude-sonnet-4.6 | Implements one task at a time from a Task Brief. Validates via linters/tests before reporting done.                |
 | `@code-reviewer`        | subagent | github-copilot/gpt-4.1           | Reviews every diff against the Task Brief. Issues only actionable change requests.                                 |
@@ -95,6 +95,7 @@ Both reviewers must approve before `@developer` reports completion to `@architec
 ### Prerequisites
 
 - [opencode](https://opencode.ai/) installed
+- Or Copilot CLI installed
 - [Obsidian](https://obsidian.md/) with a vault at `~/sb/` (or adjust the vault path in `architect.md`, `dveloper.md`, `code-reviewer.md`, `second-code-reviewer.md` and `repo-scout.md` accordingly)
 - Companion [skills repository](https://github.com/carlosarangocardona/skills/) installed
 
@@ -103,20 +104,24 @@ Both reviewers must approve before `@developer` reports completion to `@architec
 Clone this repo, then symlink or copy the relevant subdirectory into your tool's agents folder.
 
 **opencode (GitHub Copilot models):**
+
 ```bash
 git clone https://github.com/carlosarangocardona/ai-agents
 ln -s $(pwd)/ai-agents/opencode-agents ~/.config/opencode/agents
 ```
 
 **opencode (free/open-weight models):**
+
 ```bash
 git clone https://github.com/carlosarangocardona/ai-agents
 ln -s $(pwd)/ai-agents/opencode-free-agents ~/.config/opencode/agents
 ```
 
 **GitHub Copilot CLI:**
+
 ```bash
 git clone https://github.com/carlosarangocardona/ai-agents
+ln -s -s $(pwd)/ai-agents/copilot-agents ~/.config/copilot/agents
 # place files from copilot-agents/ in your Copilot CLI agents directory
 ```
 
