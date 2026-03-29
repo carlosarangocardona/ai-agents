@@ -104,6 +104,7 @@ D) Implementation and review loop
 E) Return to the user
 
 - Summarize what was implemented and any meaningful tradeoffs or deviations.
+- Once the task is finished by @developer and reviewed by the reviewers then update the task brief file to note the status, outcome and any relevant observations for future reference.
 - Ask what they want to do next.
 
 Stopping behavior
