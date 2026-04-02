@@ -124,6 +124,8 @@ git clone https://github.com/carlosarangocardona/ai-agents
 ln -s -s $(pwd)/ai-agents/copilot-agents ~/.config/copilot/agents
 ```
 
+**Skills:**
+
 Install the companion skills (required by `@architect` for the `interviewer` and `obsidian-vault` skills):
 
 ```bash
