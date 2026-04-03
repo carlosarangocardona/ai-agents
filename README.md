@@ -15,6 +15,7 @@ Pairs with my [skills repository](https://github.com/carlosarangocardona/skills/
 | `@code-reviewer`        | subagent | gpt-5.3-codex     | Reviews every diff against the Task Brief. Issues only actionable change requests.                                 |
 | `@second-code-reviewer` | subagent | gemini-3.1-pro    | Independent second reviewer. Engaged in parallel on medium/high complexity tasks, after `@code-reviewer` approves. |
 | `@repo-scout`           | subagent | claude-sonnet-4.6 | Scans an unfamiliar repo and writes/maintains `ARCHITECTURE.md`. Read-only except for that file.                   |
+| `@interviewer`          | subagent | claude-opus-4.6   | Interviews you about ideas and changes until reaching shared understanding. Surfaces assumptions and trade-offs.   |
 
 ---
 
