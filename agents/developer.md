@@ -54,7 +54,7 @@ Validation
 
 Review loop
 
-- After completing your implementation, YOU MUST request review from ALL OF @code-reviewer, @code-reviewerer, in parallel. Provide each with the Task Brief file path and a summary of your changes.
+- After completing your implementation, YOU MUST request reviews from at least @code-reviewer. For medium and high complexity tasks also request a review from @second-code-reviewer, in parallel. Provide each with the Task Brief file path and a summary of your changes.
 - When review feedback arrives from either reviewer, make the minimal changes needed to satisfy the Task Brief and the review requests.
 - Iterate with both reviewers until BOTH approve (any response without change requests counts as approval). You need approval from both before proceeding.
 - If review feedback conflicts with the Task Brief or expands scope materially, escalate to @architect instead of deciding unilaterally.
